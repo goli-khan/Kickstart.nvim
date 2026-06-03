@@ -13,7 +13,7 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>e', '<cmd>Neotree toggle left reveal<cr>', desc = 'Toggle Neo-tree' },
   },
   ---@module 'neo-tree'
   ---@type neotree.Config
@@ -21,7 +21,10 @@ return {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['\\'] = 'none',
+          ['l'] = 'open',
+          ['h'] = 'close_node',
+          -- your other mappings...
         },
       },
     },

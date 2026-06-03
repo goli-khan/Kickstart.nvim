@@ -9,5 +9,6 @@ spell/
 # control, see https://lazy.folke.io/usage/lockfile
 # For kickstart, it makes sense to leave it ignored.
 lazy-lock.json
+.lazy.lua
 
 .DS_Store
