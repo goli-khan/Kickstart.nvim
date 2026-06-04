@@ -46,9 +46,14 @@ vim.keymap.set('n', '|', '<cmd>split<cr>', { silent = true, desc = 'Split Window
 -- https://github.com/nvim-treesitter/nvim-treesitter#folding
 -- look for foldenable: https://github.com/neovim/neovim/blob/master/src/nvim/options.lua
 -- Vim cheatsheet, look for folds keys: https://devhints.io/vim
-vim.opt.foldmethod = 'expr' -- default is "normal"
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()' -- default is ""
-vim.opt.foldenable = false -- if this option is true and fold method option is other than normal, every time a document is opened everything will be folded.
+vim.opt.foldcolumn = '1'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true -- if this option is true and fold method option is other than normal, every time a document is opened everything will be folded.
+-- Safe Keymaps: Explicitly passing 'expr = false' prevents the v0.10 native clash
+
+vim.keymap.set('n', 'zO', function() require('ufo').openAllFolds() end, { desc = 'Open all folds', remap = false, expr = false })
+vim.keymap.set('n', 'zC', function() require('ufo').closeAllFolds() end, { desc = 'Close all folds', remap = false, expr = false })
 
 -- AstroVim Buffer Navigation Mappings
 
