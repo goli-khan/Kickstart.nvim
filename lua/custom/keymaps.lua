@@ -9,7 +9,7 @@ vim.diagnostic.config {
   underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
   -- Can switch between these as you prefer
-  virtual_text = true, -- Text shows up at the end of the line
+  virtual_text = true,   -- Text shows up at the end of the line
   virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
   -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
@@ -31,9 +31,9 @@ vim.api.nvim_set_keymap('v', 'jk', '<Esc>', { noremap = true, silent = true })
 
 -- Map Shift + Enter to Escape in Normal mode
 vim.api.nvim_set_keymap(
-  'i', -- Insert mode
-  '<C-CR>', -- Keybinding: Ctrl + Enter
-  '<Esc>o', -- Action: Exit insert mode and create a new line below
+  'i',                              -- Insert mode
+  '<C-CR>',                         -- Keybinding: Ctrl + Enter
+  '<Esc>o',                         -- Action: Exit insert mode and create a new line below
   { noremap = true, silent = true } -- Options: No recursive mapping, silent execution
 )
 vim.opt.clipboard = 'unnamedplus'
@@ -52,8 +52,10 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true -- if this option is true and fold method option is other than normal, every time a document is opened everything will be folded.
 -- Safe Keymaps: Explicitly passing 'expr = false' prevents the v0.10 native clash
 
-vim.keymap.set('n', 'zO', function() require('ufo').openAllFolds() end, { desc = 'Open all folds', remap = false, expr = false })
-vim.keymap.set('n', 'zC', function() require('ufo').closeAllFolds() end, { desc = 'Close all folds', remap = false, expr = false })
+vim.keymap.set('n', 'zO', function() require('ufo').openAllFolds() end,
+  { desc = 'Open all folds', remap = false, expr = false })
+vim.keymap.set('n', 'zC', function() require('ufo').closeAllFolds() end,
+  { desc = 'Close all folds', remap = false, expr = false })
 
 -- AstroVim Buffer Navigation Mappings
 
