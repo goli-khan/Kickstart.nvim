@@ -16,6 +16,9 @@ vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.opt.breakat:remove { '>', ')', '}' }
+vim.opt.wrap = true      -- Turn on wrapping
+vim.opt.linebreak = true -- Wrap at whole words/tags, not in the middle of a word
 
 -- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
